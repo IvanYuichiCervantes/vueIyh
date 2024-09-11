@@ -1,0 +1,43 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+<script>
+export default {
+  name: 'Item',
+  props: ['product'],
+  methods: {
+    addToCart(product) {
+      console.log(product)
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="item">
+    <h3>{{ product.name }}</h3>
+    <p>Price: ₱{{ product.price }}</p>
+    <button @click="addToCart(product)">Add to Cart</button>
+  </div>
+</template>
+
+<style scoped>
+.item {
+  background-color: #ffffff;
+  margin: 10px 10px;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+  width: 25%;
+}
+
+.item:hover {
+  transform: translateY(5px);
+}
+
+button {
+  background-color: hsl(208, 92%, 48%);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+  margin: 10px auto;
+}
+</style>
